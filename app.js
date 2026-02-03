@@ -129,11 +129,20 @@ function displayResults() {
         if (cardElement) {
             const orientation = item.orientation;
             const orientationClass = orientation === 'reversed' ? 'reversed' : '';
+            const rotationStyle = orientation === 'reversed' ? 'transform: rotate(180deg);' : '';
 
             cardElement.innerHTML = `
-                <div class="card-name">${item.card.name}</div>
-                <div class="orientation ${orientationClass}">${orientation.toUpperCase()}</div>
-                <div class="position-name">${celticCrossPositions[index].name}</div>
+                <div class="card-image-container">
+                    <img src="${item.card.image}" alt="${item.card.name}" class="card-image" style="${rotationStyle}" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div class="card-image-fallback" style="display: none;">
+                        <div class="card-name">${item.card.name}</div>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <div class="card-name-small">${item.card.name}</div>
+                    <div class="orientation ${orientationClass}">${orientation.toUpperCase()}</div>
+                    <div class="position-name">${celticCrossPositions[index].name}</div>
+                </div>
             `;
         }
     });
