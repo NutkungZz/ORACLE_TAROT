@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oracle Tarot - Celtic Cross Reading</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔮 Oracle Tarot</h1>
+            <p class="subtitle">Celtic Cross Reading - 10 Cards</p>
+        </header>
+
+        <main>
+            <!-- Step 1: Introduction -->
+            <div id="intro-screen" class="screen active">
+                <div class="intro-content">
+                    <h2>Welcome to Your Celtic Cross Reading</h2>
+                    <p>The Celtic Cross is one of the most powerful and comprehensive tarot spreads.</p>
+                    <p>This 10-card reading will provide insight into your current situation, challenges, and future possibilities.</p>
+                    <div class="instructions">
+                        <h3>How it works:</h3>
+                        <ol>
+                            <li>The Oracle will shuffle the cards</li>
+                            <li>You will select 10 cards from the spread</li>
+                            <li>The cards will be laid out in the Celtic Cross pattern</li>
+                            <li>Copy the results to get your interpretation</li>
+                        </ol>
+                    </div>
+                    <button id="start-btn" class="primary-btn">Begin Your Reading</button>
+                </div>
+            </div>
+
+            <!-- Step 2: Card Selection -->
+            <div id="selection-screen" class="screen">
+                <div class="selection-content">
+                    <h2>The Oracle Has Shuffled the Cards</h2>
+                    <p class="instruction">Select <span id="cards-remaining">10</span> cards from the deck below</p>
+                    <p class="selected-count">Cards selected: <span id="selected-count">0</span>/10</p>
+
+                    <div id="card-deck" class="card-deck">
+                        <!-- Cards will be generated here -->
+                    </div>
+
+                    <button id="continue-btn" class="primary-btn" disabled>View Your Reading</button>
+                </div>
+            </div>
+
+            <!-- Step 3: Results -->
+            <div id="results-screen" class="screen">
+                <div class="results-content">
+                    <h2>Your Celtic Cross Reading</h2>
+                    <p class="instruction">Copy the text below and paste it to Claude for your interpretation</p>
+
+                    <div class="celtic-cross-layout">
+                        <!-- Celtic cross visual layout -->
+                        <div class="cross-container">
+                            <div class="cross-card card-pos-3" data-position="3"></div>
+                            <div class="cross-card card-pos-5" data-position="5"></div>
+                            <div class="cross-card card-pos-1" data-position="1">
+                                <div class="cross-card card-pos-2" data-position="2"></div>
+                            </div>
+                            <div class="cross-card card-pos-4" data-position="4"></div>
+                            <div class="cross-card card-pos-6" data-position="6"></div>
+                        </div>
+                        <div class="staff-container">
+                            <div class="cross-card card-pos-10" data-position="10"></div>
+                            <div class="cross-card card-pos-9" data-position="9"></div>
+                            <div class="cross-card card-pos-8" data-position="8"></div>
+                            <div class="cross-card card-pos-7" data-position="7"></div>
+                        </div>
+                    </div>
+
+                    <div class="copy-section">
+                        <textarea id="reading-text" readonly></textarea>
+                        <button id="copy-btn" class="primary-btn">Copy to Clipboard</button>
+                        <p id="copy-status" class="copy-status"></p>
+                    </div>
+
+                    <button id="new-reading-btn" class="secondary-btn">Start New Reading</button>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Oracle Tarot - Celtic Cross Divination</p>
+        </footer>
+    </div>
+
+    <script src="tarot-data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
