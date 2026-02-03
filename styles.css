@@ -296,13 +296,52 @@ main {
     background: linear-gradient(135deg, #1e3a5f 0%, #2c5f8d 100%);
     border: 2px solid #d4af37;
     border-radius: 8px;
-    padding: 8px;
+    padding: 4px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     font-size: 0.7em;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     overflow: hidden;
+}
+
+.cross-card .card-image-container {
+    width: 100%;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.cross-card .card-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.cross-card .card-image-fallback {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+.cross-card .card-image-fallback .card-name {
+    font-size: 0.8em;
+    text-align: center;
+}
+
+.cross-card .card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-top: 4px;
 }
 
 .cross-card .card-name {
@@ -313,17 +352,24 @@ main {
     line-height: 1.2;
 }
 
+.cross-card .card-name-small {
+    font-weight: bold;
+    color: #d4af37;
+    text-align: center;
+    font-size: 0.65em;
+    line-height: 1.1;
+}
+
 .cross-card .position-name {
-    font-size: 0.75em;
+    font-size: 0.6em;
     color: #b8b8b8;
     text-align: center;
     font-style: italic;
-    margin-top: 5px;
 }
 
 .cross-card .orientation {
     text-align: center;
-    font-size: 0.8em;
+    font-size: 0.65em;
     color: #4CAF50;
     font-weight: bold;
 }
@@ -393,5 +439,17 @@ footer {
         width: 80px;
         height: 120px;
         font-size: 0.6em;
+    }
+    .cross-card .card-image-container {
+        height: 70px;
+    }
+    .cross-card .card-name-small {
+        font-size: 0.55em;
+    }
+    .cross-card .orientation {
+        font-size: 0.55em;
+    }
+    .cross-card .position-name {
+        font-size: 0.5em;
     }
 }
